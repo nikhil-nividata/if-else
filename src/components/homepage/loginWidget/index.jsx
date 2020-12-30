@@ -1,5 +1,5 @@
 import React from "react";
-import GoogleSignIn from "../../googleSignIn";
+import GoogleSignIn from "../googleSignIn";
 import { Card, Row, Col } from "react-materialize";
 
 export default function index() {
