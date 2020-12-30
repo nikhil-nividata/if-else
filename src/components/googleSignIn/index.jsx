@@ -3,7 +3,7 @@ import { Button } from "react-materialize";
 import firebase from "firebase";
 import "firebase/auth";
 
-export default function index(props) {
+export default function index() {
   const provider = new firebase.auth.GoogleAuthProvider();
   return (
     <div>

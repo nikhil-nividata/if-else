@@ -1,14 +1,6 @@
 import React from "react";
-import { Button } from "react-materialize";
-import GoogleSignIn from "../googleSignIn";
-import firebase from "firebase";
-import "firebase/auth";
+import LoginWidget from "./loginWidget";
 
-export default function index(props) {
-  console.log("HomePage props ", props);
-  return (
-    <div>
-      <GoogleSignIn {...props}></GoogleSignIn>
-    </div>
-  );
+export default function index({ loggedIn }) {
+  return <div>{!loggedIn ? <LoginWidget /> : null}</div>;
 }

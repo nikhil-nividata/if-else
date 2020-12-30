@@ -53,8 +53,8 @@ class App extends Component {
     const { loggedIn } = this.state;
     return (
       <Router>
-        <Navbar />
-        <Routes login={this.login} />
+        <Navbar loggedIn={loggedIn} />
+        <Routes loggedIn={loggedIn} />
       </Router>
     );
   }

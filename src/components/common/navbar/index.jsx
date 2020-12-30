@@ -3,7 +3,7 @@ import { Navbar, NavItem } from "react-materialize";
 import firebase from "firebase";
 import "firebase/auth";
 
-export default function index(props) {
+export default function index({ loggedIn }) {
   return (
     <Navbar
       alignLinks="right"
@@ -21,13 +21,18 @@ export default function index(props) {
         preventScrolling: true,
       }}
     >
-      <NavItem
-        onClick={() => {
-          firebase.auth().signOut().then().catch();
-        }}
-      >
-        <span style={{ fontSize: "1.6rem", marginRight: "2vw" }}> Logout </span>
-      </NavItem>
+      {loggedIn ? (
+        <NavItem
+          onClick={() => {
+            firebase.auth().signOut().then().catch();
+          }}
+        >
+          <span style={{ fontSize: "1.6rem", marginRight: "2vw" }}>
+            {" "}
+            Logout{" "}
+          </span>
+        </NavItem>
+      ) : null}
     </Navbar>
   );
 }
